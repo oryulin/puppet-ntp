@@ -1,0 +1,15 @@
+{
+  "name": "oryulin-ntp",
+  "version": "0.1.0",
+  "author": "oryulin",
+  "summary": "Manage ntp",
+  "license": "Apache-2.0",
+  "source": "https://github.com/oryulin/puppet-ntp.git",
+  "project_page": "https://github.com/oryulin/puppet-ntp",
+  "issues_url": "https://github.com/oryulin/puppet-ntp/issues",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+  ],
+  "data_provider": null
+}
+
