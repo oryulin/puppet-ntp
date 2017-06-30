@@ -1,7 +1,7 @@
 # Defining data function which replaces the deprecated params.pp file:
-function ntp::data {
+function ntp::data() {
 
-  $default_variables = {  
+  $base_params = {  
     'ntp::package_name'            => 'ntp',
     'ntp::package_ensure'          => 'present',
     'ntp::configuration_name'      => 'ntp.conf',
@@ -13,14 +13,14 @@ function ntp::data {
     'ntp::service_hasstatus'       => true,
   }
 
-  $service_name = $facts['os']['family'] ? {
-    'Debian' => 'ntp',
-    default => 'ntpd',
+  $os_params = $facts['os']['family'] ? {
+    'Debian' => { 
+      'ntp::service_name'          => 'ntp',
+    },
+    default => { 
+      'ntp::service_name'          => 'ntpd',
+    },
   }
   
-  $service_variables = {
-    'ntp::service_name'            => $service_name
-  }
-  
-  $default_variables + $service_variables
+  $base_params + $os_params
 }
