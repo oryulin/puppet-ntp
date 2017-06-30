@@ -1,20 +1,20 @@
 class ntp(
 
   # Install parameters are first:
-  String $package_name,
-  String $package_ensure,
+  $package_name,
+  $package_ensure,
   
   # Configuration parameters are next:
-  String $configuration_name,
-  String $configuration_file_mode,
-  Array[String] $servers,
+  $configuration_name,
+  $configuration_file_mode,
+  $servers,
   
   # Service parameters are last:
-  String $service_ensure,
-  String $service_name,
-  Boolean $service_enable,
-  Boolean $service_hasrestart,
-  Boolean $service_hasstatus,  
+  $service_ensure,
+  $service_name,
+  $service_enable,
+  $service_hasrestart,
+  $service_hasstatus,  
 
 ) {
   class { '::ntp::install': }
