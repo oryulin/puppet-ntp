@@ -5,7 +5,7 @@ class ntp(
   String $package_ensure,
   
   # Configuration parameters are next:
-  String $configuration_nam,
+  String $configuration_name,
   String $configuration_file_mode,
   Array[String] $servers,
   
