@@ -1,7 +1,7 @@
 class ntp::config(
-  String $configuration_name      = $ntp::configuration_name,
-  String $configuration_file_mode = $ntp::configuration_file_mode,
-  Array[String] $servers          = $ntp::servers,
+  String $configuration_name,
+  String $configuration_file_mode,
+  Array[String] $servers,
 ) {
   file { "/etc/${configuration_name}": 
     ensure                        => file,
