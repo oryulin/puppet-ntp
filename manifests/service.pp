@@ -1,4 +1,4 @@
-class ntp::service inherit ntp{
+class ntp::service inherits ntp{
   service { 'ntp':
     ensure     => $service_ensure,
     enable     => $service_enable,

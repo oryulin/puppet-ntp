@@ -1,4 +1,4 @@
-class ntp::config inherit ntp{
+class ntp::config inherits ntp{
   file { "/etc/${configuration_name}": 
     ensure                        => file,
     owner                         => 0,
