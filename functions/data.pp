@@ -1,5 +1,5 @@
 # Defining data function which replaces the deprecated params.pp file:
-function ntp::data() {
+function ntp::data {
 
   $base_params = {  
     'ntp::package_name'            => 'ntp',
@@ -22,5 +22,6 @@ function ntp::data() {
     },
   }
   
+  notify { "${base_params}": }
   $base_params + $os_params
 }
