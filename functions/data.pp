@@ -10,13 +10,32 @@ function ntp::data {
     'ntp::service_hasrestart'      => true,
     'ntp::service_hasstatus'       => true,
   }
-  $os_params = $facts['os']['family'] ? {
-    'Debian' => { 
-      'ntp::service_name'          => 'ntp',
-    },
-    default => { 
-      'ntp::service_name'          => 'ntpd',
-    },
+
+
+#  $os_params = $facts['os']['family'] ? {
+#    'Debian' => { 
+#      'ntp::service_name'          => 'ntp',
+#    },
+#    default => { 
+#      'ntp::service_name'          => 'ntpd',
+#    },
+#  }
+
+    case $facts['os']['family'] {
+    'Debian': {
+      $os_params = {
+        'ntp::service_name' => 'ntp',
+      }
+    }
+    'RedHat': {
+      $os_params = {
+        'ntp::service_name' => 'ntpd',
+      }
+    }
+    default: {
+      fail("${facts['os']['family']} is not supported!")
+    }
   }
+
   $base_params + $os_params
 }
