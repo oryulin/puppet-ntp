@@ -1,10 +1,4 @@
-class ntp::service(
-  $service_name,
-  $service_ensure,
-  $service_enable,
-  $service_hasstatus,
-  $service_hasrestart,
-) {
+class ntp::service inherit ntp{
   service { 'ntp':
     ensure     => $service_ensure,
     enable     => $service_enable,
@@ -12,4 +6,4 @@ class ntp::service(
     hasstatus  => $service_hasstatus,
     hasrestart => $service_hasrestart,
   }
-}
+} 

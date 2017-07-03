@@ -1,7 +1,4 @@
-class ntp::install(
-  $package_name,
-  $package_ensure,
-) {
+class ntp::install inherit ntp{
   package { $package_name:
     ensure               => $package_ensure,
   }
