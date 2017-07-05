@@ -3,13 +3,17 @@ ntp::package_name: 'ntp'
 ntp::package_ensure: 'present'
 ntp::configuration_name: 'ntp.conf'
 ntp::configuration_file_mode: '0644'
-ntp::servers: 
-  - '0.centos.pool.ntp.org'
-  - '1.centos.pool.ntp.org'
-  - '2.centos.pool.ntp.org'
-  - '3.centos.pool.ntp.org'
 ntp::service_ensure: 'running'
 ntp::service_enable: true
 ntp::service_hasrestart: true
 ntp::service_hasstatus: true
+
+# OS Specific Settings. These are default values if none provided:
+ntp::servers:
+  - '0.centos.pool.ntp.org'
+  - '1.centos.pool.ntp.org'
+  - '2.centos.pool.ntp.org'
+  - '3.centos.pool.ntp.org'
+
 ntp::service_name: 'ntpd'
+

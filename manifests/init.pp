@@ -1,4 +1,5 @@
 class ntp(
+  # Gets this data from either function/data.pp OR hiera
   $package_name,
   $package_ensure,
   $configuration_name,
