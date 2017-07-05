@@ -11,6 +11,8 @@ class ntp(
   $service_hasstatus,  
 ) {
   class { '::ntp::install': }
-  -> class { '::ntp::config': }
-  ~> class { '::ntp::service': }
+  class { '::ntp::config': }
+  class { '::ntp::service': }
+
+  Class['ntp::install'] -> Class['ntp::config'] ~> Class['ntp::service']
 }
