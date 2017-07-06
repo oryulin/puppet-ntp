@@ -8,7 +8,6 @@ ntp::service_enable: true
 ntp::service_hasrestart: true
 ntp::service_hasstatus: true
 
-# OS Specific Settings. These are default values if none provided:
 ntp::servers:
   - '0.centos.pool.ntp.org'
   - '1.centos.pool.ntp.org'

@@ -1,5 +1,6 @@
 ---
 ntp::service_name: ntp
+
 ntp::servers:
   - '0.ubuntu.pool.ntp.org'
   - '1.ubuntu.pool.ntp.org'
