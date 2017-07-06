@@ -4,9 +4,11 @@ defaults:
   datadir: data
   data_hash: yaml_data
 hierarchy:
-  - name: "OS family"
+  - name: "Environment: Nodes"
+    path: "nodes/%{facts.fqdn}.yaml"
+
+  - name: "Environment: Operating Systems"
     path: "os/%{facts.os.family}.yaml"
 
-  - name: "Other directories"
-    paths: 
-      - "common.yaml"
+  - name: "Environment: common.yaml"
+    path: "common.yaml"
