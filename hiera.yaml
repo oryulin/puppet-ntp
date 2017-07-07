@@ -5,7 +5,7 @@ defaults:
   data_hash: yaml_data
 hierarchy:
   - name: "Environment: Nodes"
-    path: "nodes/%{facts.fqdn}.yaml"
+    path: "nodes/%{fqdn}.yaml"
 
   - name: "Environment: Operating Systems"
     path: "os/%{facts.os.family}.yaml"
